@@ -19,9 +19,9 @@ export default function ApplyModal() {
           fontSize={"20px"}
           backgroundColor={"#497497"}
           color={"white"}
-          marginLeft={"3vh"}
+          marginLeft={{ base: "none", md: "3vh" }}
           borderRadius={"10vh"}
-          width={"17vh"}
+          width={{ base: "12vh", md: "17vh" }}
           height={"5vh"}
           opacity={"0.8"}
           _hover={{ opacity: 1.0 }}
