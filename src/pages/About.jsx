@@ -4,8 +4,8 @@ import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid";
 export default function About() {
   const funders = [
     "matchPoint",
-    "Artifical Emotion",
-    "Rawsume",
+    "Artificial Emotion",
+    "RawResume",
     "SeaSell",
     "Applyee",
     "Antoy",
