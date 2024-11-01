@@ -9,35 +9,37 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "@chakra-ui/react";
+import { Button, Card, Image } from "@chakra-ui/react";
 
-export default function ApplyModal() {
+export default function ProjectModal({ project }) {
   return (
     <DialogRoot size={"lg"}>
       <DialogTrigger asChild>
-        <Button
-          fontSize={"20px"}
-          backgroundColor={"#497497"}
-          color={"white"}
-          marginLeft={"3vh"}
-          borderRadius={"10vh"}
-          width={"17vh"}
-          height={"5vh"}
-          opacity={"0.8"}
-          _hover={{ opacity: 1.0 }}
+        <Card.Root
+          borderRadius={"5vh"}
+          _hover={{ transform: "scale(1.1)", transition: "transform .4s" }}
+          backgroundColor={"#101014"}
         >
-          Apply
-        </Button>
+          <Card.Body gap="2">
+            <Image
+              src="https://picsum.photos/200/300"
+              width={"30vh"}
+              height={"13vh"}
+            ></Image>
+          </Card.Body>
+          <Card.Footer justifyContent="center">{project}</Card.Footer>
+        </Card.Root>
       </DialogTrigger>
       <DialogContent backgroundColor={"white"} color={"black"}>
         <DialogHeader>
-          <DialogTitle fontSize={"25px"}>Apply</DialogTitle>
+          <DialogTitle fontSize={"25px"}>{project}</DialogTitle>
         </DialogHeader>
         <DialogBody>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <Image
+            src="https://picsum.photos/200/300"
+            width={"50vh"}
+            height={"30vh"}
+          ></Image>
         </DialogBody>
         <DialogFooter>
           <DialogActionTrigger asChild>
@@ -46,7 +48,7 @@ export default function ApplyModal() {
               color={"black"}
               _hover={{ backgroundColor: "black", color: "white" }}
             >
-              Submit
+              Close
             </Button>
           </DialogActionTrigger>
         </DialogFooter>

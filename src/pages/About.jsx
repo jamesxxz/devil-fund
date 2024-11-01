@@ -1,8 +1,11 @@
 import { Flex, Text, Stack, Box, Button, Card, Image } from "@chakra-ui/react";
 import { EllipsisHorizontalIcon } from "@heroicons/react/16/solid";
+import ProjectModal from "@/components/components/ProjectModal";
+import NewProjectForm from "@/components/components/NewProjectForm";
+import { useState } from "react";
 
 export default function About() {
-  const funders = [
+  const initProjects = [
     "matchPoint",
     "Artificial Emotion",
     "RawResume",
@@ -10,6 +13,8 @@ export default function About() {
     "Applyee",
     "Antoy",
   ];
+
+  const [projects, updateProjects] = useState(initProjects);
 
   return (
     <Stack>
@@ -37,7 +42,7 @@ export default function About() {
           <Text textStyle={"5xl"}>Why</Text>
           <Text
             textStyle={"5xl"}
-            color={"red"}
+            color={"#950000"}
             fontFamily={"'Fira Sans Condensed', sans-serif"}
           >
             DEVIL FUND
@@ -66,32 +71,10 @@ export default function About() {
         </Button>
 
         <Flex gap={"5vh"} width={"120vh"} flexWrap={"wrap"} marginTop={"10vh"}>
-          {funders.map((funder) => {
-            return (
-              <Card.Root borderRadius={"5vh"}>
-                <Card.Body gap="2">
-                  <Image
-                    src="https://picsum.photos/200/300"
-                    width={"30vh"}
-                    height={"13vh"}
-                  ></Image>
-                </Card.Body>
-                <Card.Footer justifyContent="center">{funder}</Card.Footer>
-              </Card.Root>
-            );
+          {projects.map((proj) => {
+            return <ProjectModal project={proj}></ProjectModal>;
           })}
-          <Card.Root borderRadius={"5vh"}>
-            <Card.Body gap="2">
-              <Text
-                width={"30vh"}
-                height={"13vh"}
-                textAlign={"center"}
-                fontSize={"60px"}
-              >
-                +
-              </Text>
-            </Card.Body>
-          </Card.Root>
+          <NewProjectForm></NewProjectForm>
         </Flex>
       </Flex>
     </Stack>
