@@ -1,4 +1,4 @@
-import { Flex, Text, Button, Icon, HStack, Box } from "@chakra-ui/react";
+import { Flex, Button, Box } from "@chakra-ui/react";
 
 export default function MainNavBar() {
   const navPage = ["About", "Projects", "Jobs", "Transactions"];
